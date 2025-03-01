@@ -7,11 +7,11 @@ const expressHbs = require('express-handlebars');
 
 const app = express();
 
-//app.engine('hbs', expressHbs());
-//app.set('view engine', 'hbs')
+app.engine('hbs', expressHbs({LayoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs'}));
+app.set('view engine', 'hbs')
 
-app.set('view engine', 'pug');
-app.set('views', 'views');
+//app.set('view engine', 'pug');
+//app.set('views', 'views');
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
